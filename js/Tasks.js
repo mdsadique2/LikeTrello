@@ -61,7 +61,7 @@ class Tasks {
         let cardContainer = event.target.closest(".taskBody");
         let key = cardContainer.dataset.grouptitle;
         let index = [...cardContainer.children].indexOf(card);
-        if (event.target.classList.contains('fa-edit')) {
+        if (event.target.classList.contains('fa-edit') || event.target.classList.contains('fa-check-circle') || event.target.classList.contains('fa-times-circle') ) {
             this.allTasks[index].editCard(event);
         }
         if (event.target.classList.contains('fa-trash')) {
