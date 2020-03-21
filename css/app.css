@@ -1,0 +1,228 @@
+.mainContainer{
+	width: 100vw;
+	height: 100vh;
+	position: relative;
+	background-color: #7BB0E5;
+	background-image: linear-gradient(330deg, #8EB5E6 , #DDD7F4, #7BB0E5);
+	padding: 20px;
+}
+
+.cards {
+	border-radius: 4px;
+}
+
+.taskGroupContainer {
+	display: flex;
+	margin: auto;
+	width: 100%;
+	height: 100%;
+	padding: 30px;
+	overflow: auto;
+	border: 1px solid rgba(255, 255, 255, 0.5);
+    border-radius: 6px;
+}
+
+.taskGroups {
+	min-width: 320px;
+	background-color: rgba(100,100,100,0.25);
+	border-radius: 6px;
+	padding: 10px; 
+	display: flex;
+	flex-direction: column; 
+	margin-right: 15px; 
+}
+
+.task {
+	max-width: 100%;
+	min-height: 35px;
+	background: #fff;
+	margin-bottom: 10px;
+	padding: 8px;
+	font-size: 1.4rem;
+	font-weight: 500;
+	cursor: move;
+	cursor: grab;
+	position: relative;
+	transition: all 0.15s ease;
+	overflow: hidden;
+}
+
+.task.edit .cardText{
+	display: none;
+}
+
+.task.edit .cardTextInput{
+	font-size: 1.4rem;
+    padding: 5px;
+    border: 1px solid #ddd;
+    width: calc(100% - 50px);
+    border-radius: 4px;
+}
+
+.task.edit .cardTextInput:focus{
+	outline: #0098db auto 2px;
+}
+
+
+
+
+
+.placeHolder {
+	width: 100%;
+    height: 40px;
+    background: rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    border-radius: 6px;
+}
+
+.task.move {
+	margin-top: 40px;
+	transition: all 0.15s ease;
+}
+
+.task .cardIcons {
+	position: absolute;
+    right: -100px;
+    top: 0px;
+    font-size: 1.5rem;
+    color: #ccc;
+    padding: 10px 2px;
+	transition: all 0.15s ease;
+}
+
+.task:hover .cardIcons {
+    right: 5px;
+	transition: all 0.15s ease;
+
+}
+
+
+.task .cardIcons.editIcons {
+	display: none;
+}
+
+
+.task.edit .cardIcons {
+	display: none;
+	right: 5px;
+}
+
+.task.edit .cardIcons.editIcons {
+	display: block;
+	font-size: 1.7rem;
+}
+
+
+
+.task .cardIcons .fa {
+	display: inline-block;
+	margin: auto 5px;
+}
+
+.task .cardIcons:hover {
+	cursor: pointer;
+}
+
+
+.task .cardIcons:hover .fa.fa-edit, .task .cardIcons:hover .fa.fa-check-circle {
+	color: rgba(0, 150, 200, 0.5);
+
+}
+
+.task .cardIcons:hover .fa.fa-edit:hover, .task .cardIcons:hover .fa.fa-check-circle:hover {
+	color: rgba(0, 150, 200, 0.95);
+
+}
+
+.task .cardIcons:hover .fa.fa-trash, .task .cardIcons:hover .fa.fa-times-circle {
+	color: rgba(170, 60, 60, 0.5);
+}
+
+.task .cardIcons:hover .fa.fa-trash:hover, .task .cardIcons:hover .fa.fa-times-circle:hover {
+	color: rgba(240, 80, 80, 0.95);
+}
+
+
+.task:active, .task:target {
+	cursor: grabbing;
+}
+
+.taskGroups .taskHeader {
+	font-size: 1.6rem;
+	margin-bottom: 10px;
+	margin-top: 10px;
+	font-weight: bold;
+	text-transform: capitalize;
+	display: flex;
+    justify-content: space-between;
+}
+
+.taskGroups .taskHeader .fa {
+	font-size: 2rem;
+	color: rgba(170, 60, 60, 0.15);
+	transition: all 0.15s ease;
+}
+
+.taskGroups:hover .taskHeader .fa {
+	color: rgba(170, 60, 60, 0.5);
+}
+
+
+.taskGroups .taskHeader .fa:hover {
+	color: rgba(170 , 60, 60, 0.95);
+	transition: all 0.15s ease;
+	cursor: pointer;
+}
+
+
+.taskGroups .taskBody {
+	height: 100%;
+	margin-bottom: 10px;
+	border-radius: 6px;
+	padding: 0px;
+	overflow: auto;
+}
+
+
+.taskGroups .taskBody.dragActive {
+	padding: 5px;
+	background: rgba(0, 0, 0, 0.25);
+}
+
+
+
+.taskGroups .taskInput {
+	margin-top: auto;
+	width: 100%;
+}
+
+.inputForm {
+	min-width: 300px; 
+	display: flex;
+    flex-direction: column;
+    order: 2;
+}
+
+
+
+
+input.task{
+	border: 0px;
+	display: block;
+	cursor: text;
+}
+
+
+
+
+
+
+button.noBg {
+	background-color: rgba(255,255,255,0.45);
+	color: #666;
+}
+
+button.noBg:hover {
+	background-color: rgba(255,255,255,0.85);
+	color: #000;
+}
