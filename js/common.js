@@ -26,23 +26,4 @@ class Common {
             if (callNow) func.apply(context, args);
         };
     }
-
-    static throttle (func, wait = 100) {
-        let timer = (new Date()).getTime();
-        return function(...args) {
-        	let newTimer = (new Date()).getTime();
-        	if (newTimer - timer >= wait) {
-        		func.apply(this, args);
-        		timer = newTimer;
-        	}
-
-
-            // if (timer === null) {
-	           //  timer = setTimeout(() => {
-	           //      func.apply(this, args);
-	           //      timer = null;
-	           //  }, wait); 
-            // }
-        }
-    }
 }

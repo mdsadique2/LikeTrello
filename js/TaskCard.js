@@ -8,6 +8,7 @@ class TaskCard {
 		this.ref = null
 	}
 
+	// Creates the task card
 	createTask () {
 		let elm = Common.createElement('div', 'cards task')
 		let text = Common.createElement('text', 'cardText', this.task)
@@ -37,6 +38,7 @@ class TaskCard {
 	}
 
 
+	// when card is edited successfully
 	edited (evt) {
 		let input = this.ref.getElementsByClassName('cardTextInput')[0];
 		let textNode = this.ref.getElementsByClassName('cardText')[0];
@@ -56,6 +58,7 @@ class TaskCard {
 	}
 
 
+	// to control all the edit events in a card
 	editCard (evt) {
 		let textNode = this.ref.getElementsByClassName('cardText')[0]
 		if (this.ref.classList.contains('edit')) {
@@ -70,7 +73,7 @@ class TaskCard {
 		}
 	}
 
-
+	
 	removeCard (evt) {
 		
 	}

@@ -1,4 +1,7 @@
+/*
+  Task class is used to create each group of tasks
 
+*/
 
 class Tasks {
 	constructor (parentContainer, groupName, groupRemovedCallBack) {
@@ -12,6 +15,7 @@ class Tasks {
     }
 
 
+    // generate UI for input form used to add tasks
     inputUI () {
       let inputGroup = Common.createElement('div', 'taskInput');
       this.inputForm = new InputForm(inputGroup, this.addTask.bind(this), 'Enter Task Details...', 'Add Task');
@@ -21,6 +25,7 @@ class Tasks {
     }
 
 
+    // adds a task card
     addTask (taskDetails) {
         if (!taskDetails.trim()) {
             return
@@ -32,6 +37,7 @@ class Tasks {
     }
 
 
+    // add task card with drag. i.e when card is dragged and dropped
     addTaskWithDrag (elm, index) {
         let newTask = new TaskCard(this.groupBodyRef, elm.innerText);
         newTask.ref = elm;
@@ -39,11 +45,14 @@ class Tasks {
     }
 
 
+    // when task is removed with dragging
     removeTaskWithDrag (elm, passedIndex) {
         let index = this.allTasks.indexOf(elm);
         this.allTasks.splice(index,1)
     }
 
+
+    // removes the entire group/list of task
     removeGroup (event) {
         let key = this.ref.dataset.grouptitle;
         this.inputForm.removeEventListeners();
@@ -55,7 +64,7 @@ class Tasks {
     }
 
 
-    // action when card  remove/edit is clicked
+    // action when card remove/edit is clicked ie. edit/remove/editSuccess/editCanceled
     cardAction(event) {
         let card = event.target.closest(".cards.task");
         let cardContainer = event.target.closest(".taskBody");
@@ -88,7 +97,7 @@ class Tasks {
     }
 
 
-
+    // creates the UI of list/group
     createGroupUI () {
       let group = Common.createElement('div', 'taskGroups');
       let header = Common.createElement('div', 'taskHeader');
